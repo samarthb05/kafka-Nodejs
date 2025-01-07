@@ -9,7 +9,7 @@ const consumer = kafka.consumer({ groupId: 'test-group' });
 
 const run = async () => {
   await consumer.connect();
-  await consumer.subscribe({ topic: 'test-topic', fromBeginning: true });
+  await consumer.subscribe({ topic: 'test-topic', fromBeginning: true }); //message topic must be same as mentioned in producer
 
   console.log('Waiting for messages!');
   await consumer.run({
